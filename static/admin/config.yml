@@ -7,8 +7,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - label: "Blog"
-    name: "blog"
+  - name: "blog"
+    label: "Blog"
     folder: "src/pages/blog"
     create: true
     filter: {field: "type", value: 'posts'}
@@ -20,8 +20,8 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-  - label: "Work"
-    name: "work"
+  - name: "work"
+    label: "Work"
     folder: "src/pages/work"
     create: true
     filter: {field: "type", value: 'posts'}
