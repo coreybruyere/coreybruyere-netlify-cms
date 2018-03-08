@@ -4,7 +4,12 @@ import Script from 'react-load-script';
 import graphql from 'graphql';
 
 export default class IndexPage extends React.Component {
-  static handleScriptLoad() {
+  constructor(props) {
+    super(props);
+    this.handleScriptLoad = this.handleScriptLoad.bind(this);
+  }
+
+  handleScriptLoad() {
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on('init', (user) => {
         if (!user) {
