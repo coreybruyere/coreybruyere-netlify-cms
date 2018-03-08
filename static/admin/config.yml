@@ -11,7 +11,7 @@ collections:
     label: "Blog"
     folder: "src/pages/blog"
     create: true
-    filter: {field: "type", value: 'posts'}
+    filter: {field: "templateKey", value: "blog-post"}
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
@@ -25,10 +25,10 @@ collections:
     label: "Work"
     folder: "src/pages/work"
     create: true
-    filter: {field: "type", value: 'posts'}
+    filter: {field: "templateKey", value: "work"}
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "work"}
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
