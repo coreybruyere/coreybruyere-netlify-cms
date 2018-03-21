@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Script from 'react-load-script';
+import Img from 'gatsby-image'
 import graphql from 'graphql';
 
 export default class workArchivePage extends React.Component {
@@ -43,8 +44,10 @@ export default class workArchivePage extends React.Component {
                   {post.frontmatter.title}
                 </Link>
                 <span> &bull; </span>
+                {console.log(post)}
                 <small>{post.frontmatter.date}</small>
               </p>
+              <Img sizes={post.frontmatter.deskImage.childImageSharp.sizes} />
               <p>
                 {post.excerpt}
                 <br />
@@ -71,8 +74,15 @@ export const workArchivePageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY")
             path
+            deskImage {
+              childImageSharp{
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

@@ -32,8 +32,10 @@ collections:
       - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: Website Link, name: link, widget: string}
+      - {label: Desktop Image, name: desktopimage, widget: image}
+      - {label: Tablet Image, name: tabletimage, widget: image}
+      - {label: Mobile Image, name: mobileimage, widget: image}
 
   - name: "pages"
     label: "Pages"
