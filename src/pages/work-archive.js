@@ -47,7 +47,8 @@ export default class workArchivePage extends React.Component {
                 {console.log(post)}
                 <small>{post.frontmatter.date}</small>
               </p>
-              <Img sizes={post.frontmatter.deskImage.childImageSharp.sizes} />
+              {/* <Img sizes={post.frontmatter.desk.childImageSharp.sizes} /> */}
+              <img src={post.frontmatter.desktopimage} alt=""/>
               <p>
                 {post.excerpt}
                 <br />
@@ -76,13 +77,7 @@ export const workArchivePageQuery = graphql`
             templateKey
             date(formatString: "YYYY")
             path
-            deskImage {
-              childImageSharp{
-                sizes(maxWidth: 630) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
+            desktopimage
           }
         }
       }

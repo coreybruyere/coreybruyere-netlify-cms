@@ -4,7 +4,12 @@ path: /edge
 title: fdsafdsafsd
 date: 2017-01-04T15:04:10.000Z
 description: fdsafdsasdas
-deskImage: "./img/test-desk.png"
+link: 'https://www.google.com/'
+desktopimage: >-
+  /img/test-desk.png
+tabletimage: >-
+  /img/test-desk.png
+mobileimage: /img/coffee-gear.png
 ---
 ![chemex](/img/chemex.jpg)
 
