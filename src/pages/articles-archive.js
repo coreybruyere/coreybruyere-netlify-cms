@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Script from 'react-load-script';
 import graphql from 'graphql';
+import Hero from '../components/Hero';
 
 export default class archivePage extends React.Component {
   constructor(props) {
@@ -32,10 +33,9 @@ export default class archivePage extends React.Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={() => this.handleScriptLoad()}
         />
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Articles</h1>
-          </div>
+        <div className="container mx-auto px-4">
+          <Hero heading="Articles"></Hero>
+
           {posts.filter(post => post.node.frontmatter.templateKey === 'blog-post').map(({ node: post }) => (
             <div className="content" style={{ border: '1px solid #eaecee', padding: '2em 4em' }} key={post.id}>
               <p>

@@ -2,6 +2,7 @@ import React from 'react';
 import graphql from 'graphql';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
+import Hero from '../components/Hero';
 
 export const WorkPostTemplate = ({
   content, contentComponent, description, title, helmet,
@@ -11,11 +12,13 @@ export const WorkPostTemplate = ({
   return (
     <section className="section">
       { helmet || ''}
-      <div className="container content">
+      <div className="container mx-auto px-4">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
-            <p>{description}</p>
+            <Hero heading={title}>
+              <p>{description}</p>
+            </Hero>
+
             <PostContent content={content} />
           </div>
         </div>

@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import Script from 'react-load-script';
 import Img from 'gatsby-image'
 import graphql from 'graphql';
+import Hero from '../components/Hero';
 
 export default class workArchivePage extends React.Component {
   constructor(props) {
@@ -33,10 +34,9 @@ export default class workArchivePage extends React.Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={() => this.handleScriptLoad()}
         />
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Work</h1>
-          </div>
+        <div className="container container mx-auto px-4">
+          <Hero heading="Latest Work"></Hero>
+
           {posts.filter(post => post.node.frontmatter.templateKey === 'work').map(({ node: post }) => (
             <div className="content" style={{ border: '1px solid #eaecee', padding: '2em 4em' }} key={post.id}>
               <p>
