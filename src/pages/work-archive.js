@@ -55,9 +55,7 @@ export default class workArchivePage extends React.Component {
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button is-small" to={post.frontmatter.path}>
-                    Keep Reading →
-                </Link>
+                <CtaLink to={post.frontmatter.path}>Keep Reading →</CtaLink>
               </p>
             </div>
             ))}

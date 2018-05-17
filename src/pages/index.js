@@ -3,6 +3,7 @@ import Link from 'gatsby-link';
 import Script from 'react-load-script';
 import graphql from 'graphql';
 import Hero from '../components/Hero';
+import CtaLink from '../components/CtaLink';
 
 export default class IndexPage extends React.Component {
   constructor(props) {
@@ -53,9 +54,7 @@ export default class IndexPage extends React.Component {
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button is-small" to={post.frontmatter.path}>
-                    Keep Reading →
-                </Link>
+                <CtaLink to={post.frontmatter.path}>Keep Reading →</CtaLink>
               </p>
             </div>
             ))}
