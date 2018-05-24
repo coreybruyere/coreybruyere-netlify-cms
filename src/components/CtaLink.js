@@ -2,19 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import styled from 'styled-components';
+import theme from '../theme-settings';
 
-const mainColor = 'indianred'
+const CtaLinkStyled = styled(Link)`
+  color: ${theme.colors.primary.dark}
 
-const CtaStyledLink = styled(Link)`
-  color: ${props => props.color ||  'goldenrod'}
+  &:hover {
+    color: ${theme.colors.primary.base};
+  }
 `;
 
 class CtaLink extends React.Component {
   render() {
     return (
-      <CtaStyledLink color={mainColor} className="btns" to={this.props.to}>
+      <CtaLinkStyled to={this.props.to}>
         {this.props.children}
-      </CtaStyledLink>
+      </CtaLinkStyled>
     );
   }
 }
